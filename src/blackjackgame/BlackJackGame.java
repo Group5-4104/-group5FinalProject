@@ -4,7 +4,7 @@
  */
 package blackjackgame;
 
-import blackjackgame.Deck;
+import blackjackgame.Deck.*;
 /**
  *
  * @author Will C-S
@@ -14,7 +14,7 @@ public class BlackJackGame {
  
     public static void main(String[] args) {
        startGame();
-         Card[] hand = Deck.generateDeck();
+         Card[] hand = Deck.shuffleDeck(Deck.generateDeck());
         System.out.println("Here are the cards in the hand");
          for(Card card:hand){
              System.out.printf("%s of %s\n",card.getValue(), card.getSuit());
