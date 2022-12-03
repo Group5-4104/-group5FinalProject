@@ -11,14 +11,11 @@ import blackjackgame.Deck.*;
  */
 public class BlackJackGame {
 
- 
+ static Card[] deck;
     public static void main(String[] args) {
        startGame();
-         Card[] hand = Deck.shuffleDeck(Deck.generateDeck());
-        System.out.println("Here are the cards in the hand");
-         for(Card card:hand){
-             System.out.printf("%s of %s\n",card.getValue(), card.getSuit());
-         }
+       game();
+        
     }
     
     public static void startGame(){
@@ -27,7 +24,7 @@ public class BlackJackGame {
         System.out.println("***********************");
    		System.out.println("");
 		System.out.println("");
-    System.out.println(" RULES: ");
+  System.out.println(" RULES: ");
 		System.out.println("* You will be dealt 2 cards. The dealer is dealt 2 cards with one face-up and one face-down.");
 		System.out.println("* Face cards are worth 10, an ace is worth 1 or 11 and cards are their value.");
 		System.out.println("* Cards are added up for their total.");
@@ -38,6 +35,25 @@ public class BlackJackGame {
 		System.out.println("* The player wins the bet if the total is highe than the dealer. the player will get 2x their bet if the player gets 21.");
 		System.out.println("");
 		System.out.println("");
+                
+                  deck = Deck.shuffleDeck(Deck.generateDeck());
+        //System.out.println("Here are the cards in the hand");
+       //  for(Card card:deck){
+         //    System.out.printf("%s of %s\n",card.getValue(), card.getSuit());
+        // }
+    }
+    
+    
+    public static void game(){
+       for (int i=0;i<3;i++){ 
+       Hand.setpHand(deck);
+       }
+      Card[] c=Hand.getpHand();
+      
+       for (int i=0;i<3;i++){ 
+     //  System.out.println(c[i].getValue());
+       }
+      
     }
     
 }
