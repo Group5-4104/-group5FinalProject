@@ -27,18 +27,9 @@ public class Player {
         this.bet = bet;
     }
 
-    public Hand getHand() {
-        return hand;
-    }
-
-    public void setHand(Hand hand) {
-        this.hand = hand;
-    }
-    private Hand hand;
-    
+ 
     
     public Player(){
         chips=200;
-        hand= new Hand();
     }
 }
