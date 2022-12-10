@@ -5,7 +5,8 @@ import static blackjackgame.BlackJackGame.player;
 import java.util.Scanner;
 
 /**
- * This class +++ Insert class description here+++
+ *This class creates a type hand and will handle the generation or both user and dealer hand
+ * it will also calculate the values of both the user and dealer hands
  *
  * @author Tarick Wilson
  */
@@ -24,8 +25,6 @@ class Hand {
     public static void setpHand(Card[] pHand, int no) {
         Hand.pHand[cPhand] = pHand[no];
         cPhand++;
-
-        // System.out.printf("%s of %s\n",Hand.pHand[no].getValue(), Hand.pHand[no].getSuit());
     }
 
     public static Card[] getdHand() {
@@ -34,8 +33,6 @@ class Hand {
 
     public static void setdHand(Card[] dHand, int no) {
         Hand.dHand[cDhand] = dHand[no];
-
-        //System.out.printf("%s of %s\n",Hand.dHand[cDhand].getValue(), Hand.dHand[cDhand].getSuit());
         cDhand++;
 
     }
@@ -46,8 +43,6 @@ class Hand {
         while (Hand.pHand[j] != null) {
             String o;
             o = Hand.pHand[j].getValue().toString();
-
-            //System.out.println(o);
             switch (o) {
                 case "ACE":
                     handValue += 11;

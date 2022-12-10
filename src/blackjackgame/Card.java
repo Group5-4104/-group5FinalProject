@@ -1,5 +1,6 @@
 package blackjackgame;
 
+//This class creates a type user
 public class Card {
 
     public enum Value {

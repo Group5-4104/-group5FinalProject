@@ -6,7 +6,7 @@ import static blackjackgame.Card.Suit.*;
 import java.util.Random;
 
 /**
- *This class +++ Insert class description here+++
+ *generates deck, all cards are in order by suit and value
  * @author Tarick Wilson
  */
 public class Deck {
@@ -14,7 +14,7 @@ public class Deck {
     
     static Card[] deck = new Card[52];
     
-    //generates deck, all cards are in order by suit and value
+    
     public static  Card[] generateDeck(){
         
         int j=0;

@@ -1,7 +1,7 @@
 package blackjackgame;
 
 /**
- * This class +++ Insert class description here+++
+ * This class creates a type Player which handles the creation and management of player bets and chips
  *
  * @author Tarick Wilson
  */

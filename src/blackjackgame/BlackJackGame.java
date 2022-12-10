@@ -30,6 +30,8 @@ public class BlackJackGame {
 
     }
 
+    //runs at the beginning of a new game and displays the rules of the game
+    //only runs once per game
     public static void startGame() {
         System.out.println("***********************");
         System.out.println("*Welcome to BLACKJACK*");
@@ -52,12 +54,14 @@ public class BlackJackGame {
 
     }
 
+    // initializes the game, shuffles the deck and deals the shoe
     public static void init() {
          
         deck = Deck.shuffleDeck(Deck.generateDeck());
         shoe();
     }
 
+    //handles and runs most of the game mechanics
     public static void game() {
         int hos = 5;
 
@@ -120,8 +124,6 @@ public class BlackJackGame {
                 BlackJackGame.restart();
 
             }
-
-           // System.out.println(Hand.calculateHandd());
         }
         if (hos == 1) {
             hos = 1;
@@ -132,10 +134,9 @@ public class BlackJackGame {
             game();
 
         }
-
-        // System.out.printf("%s of %s\n", Hand.getpHand()[0].getValue(), Hand.getpHand()[0].getSuit());
     }
 
+    //deals the shoe for each hand
     public static void shoe() {
         for (int i = 0; i < 2; i++) {
             setPlayerHand();
@@ -163,17 +164,18 @@ public class BlackJackGame {
         count1++;
     }
 
+    //adds cards to the dealer's hand after the shoe
     public static void setDealerHand() {
         Hand.setdHand(deck, dcount);
         dcount++;
 
     }
-
+ //adds cards to the dealer's hand after the shoe
     public static void setPlayerHand() {
         Hand.setpHand(deck, dcount);
         dcount++;
     }
-
+//resttarts the game after the end of each hand
     public static void restart() {
           if (!(player.getChips()==0)){         
         Hand.restart();
@@ -201,6 +203,7 @@ public class BlackJackGame {
           }
 
     }
+    //handles capturing the user's bets
     public static void bets(){
         System.out.println("You have "+player.getChips()+" Chips");
         System.out.println();
