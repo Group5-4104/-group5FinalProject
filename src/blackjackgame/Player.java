@@ -1,9 +1,8 @@
-
-
 package blackjackgame;
 
 /**
- *This class +++ Insert class description here+++
+ * This class +++ Insert class description here+++
+ *
  * @author Tarick Wilson
  */
 public class Player {
@@ -26,10 +25,15 @@ public class Player {
     public void setBet(int bet) {
         this.bet = bet;
     }
-
- 
     
-    public Player(){
-        chips=200;
+   public void addChips(){
+       chips=chips+bet;
+   }
+   public void minChips(){
+       chips=chips-bet;
+   }
+
+    public Player() {
+        chips = 200;
     }
 }

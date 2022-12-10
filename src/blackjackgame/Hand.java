@@ -1,5 +1,7 @@
 package blackjackgame;
 
+import static blackjackgame.BlackJackGame.bet;
+import static blackjackgame.BlackJackGame.player;
 import java.util.Scanner;
 
 /**
@@ -23,7 +25,7 @@ class Hand {
         Hand.pHand[cPhand] = pHand[no];
         cPhand++;
 
-       // System.out.printf("%s of %s\n",Hand.pHand[no].getValue(), Hand.pHand[no].getSuit());
+        // System.out.printf("%s of %s\n",Hand.pHand[no].getValue(), Hand.pHand[no].getSuit());
     }
 
     public static Card[] getdHand() {
@@ -32,7 +34,7 @@ class Hand {
 
     public static void setdHand(Card[] dHand, int no) {
         Hand.dHand[cDhand] = dHand[no];
-        
+
         //System.out.printf("%s of %s\n",Hand.dHand[cDhand].getValue(), Hand.dHand[cDhand].getSuit());
         cDhand++;
 
@@ -96,23 +98,6 @@ class Hand {
 
             j++;
         }
-       // System.out.println(handValue);
-
-        if (handValue == 21) {
-            System.out.println("Player blackjack");
-            System.out.println("Press Enter to play another hand");
-            input.nextInt();
-             BlackJackGame.restart();
-        }
-
-      
-        if (handValue > 21) {
-            System.out.println("player bust, dealer wins");
-            System.out.println("Press Enter to play another hand");
-            input.nextInt();
-            BlackJackGame.restart();
-        }
-
         return handValue;
     }
 
@@ -122,7 +107,7 @@ class Hand {
         while (Hand.dHand[j] != null) {
             String o;
             o = Hand.dHand[j].getValue().toString();
-            
+
             switch (o) {
                 case "ACE":
                     handValue += 11;
@@ -172,29 +157,13 @@ class Hand {
 
             j++;
         }
-       // System.out.println(handValue);
-
-        if (handValue == 21) {
-            System.out.println("dealer blackjack");
-            System.out.println("Press Enter to play another hand");
-            input.nextInt();
-           BlackJackGame.restart();
-
-        }  
-            if (handValue >= 22) {
-                System.out.println("dealer bust, player wins");
-                System.out.println("Press Enter to play another hand");
-                input.nextInt();
-                BlackJackGame.restart();
-                 
-        }
 
         return handValue;
     }
-    
-     public static void restart(){
-cPhand = 0;
- cDhand = 0;
+
+    public static void restart() {
+        cPhand = 0;
+        cDhand = 0;
     }
 
 }
