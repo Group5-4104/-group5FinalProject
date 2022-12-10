@@ -1,5 +1,7 @@
 package blackjackgame;
 
+import java.util.Scanner;
+
 /**
  * This class +++ Insert class description here+++
  *
@@ -9,7 +11,7 @@ class Hand {
 
     private static Card[] pHand = new Card[12];
     private static Card[] dHand = new Card[12];
-
+    static Scanner input = new Scanner(System.in);
     private static int cPhand = 0;
     private static int cDhand = 0;
 
@@ -98,13 +100,17 @@ class Hand {
 
         if (handValue == 21) {
             System.out.println("Player blackjack");
-            System.exit(0);
+            System.out.println("Press Enter to play another hand");
+            input.nextInt();
+             BlackJackGame.restart();
         }
 
       
         if (handValue > 21) {
             System.out.println("player bust, dealer wins");
-            System.exit(0);
+            System.out.println("Press Enter to play another hand");
+            input.nextInt();
+            BlackJackGame.restart();
         }
 
         return handValue;
@@ -170,16 +176,25 @@ class Hand {
 
         if (handValue == 21) {
             System.out.println("dealer blackjack");
-            System.exit(0);
+            System.out.println("Press Enter to play another hand");
+            input.nextInt();
+           BlackJackGame.restart();
 
         }  
             if (handValue >= 22) {
                 System.out.println("dealer bust, player wins");
-                System.exit(0);
-            
+                System.out.println("Press Enter to play another hand");
+                input.nextInt();
+                BlackJackGame.restart();
+                 
         }
 
         return handValue;
+    }
+    
+     public static void restart(){
+cPhand = 0;
+ cDhand = 0;
     }
 
 }

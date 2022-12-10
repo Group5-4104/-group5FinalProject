@@ -22,6 +22,7 @@ public class BlackJackGame {
         Scanner input = new Scanner(System.in);
 
         startGame();
+        init();
         game();
 
     }
@@ -44,8 +45,11 @@ public class BlackJackGame {
         System.out.println("");
         System.out.println("");
 
-        deck = Deck.shuffleDeck(Deck.generateDeck());
-        shoe();
+        
+    }
+    public static void init(){
+      deck = Deck.shuffleDeck(Deck.generateDeck());
+        shoe();  
     }
 
     public static void game() {
@@ -81,9 +85,13 @@ count1++;
             if(Hand.calculateHandd()>Hand.calculateHandp()){
                 System.out.println("dealer wins");
                 
+                BlackJackGame.restart();
+                
             }
             else if(Hand.calculateHandd()<Hand.calculateHandp()){
                 System.out.println("player wins");
+                
+                BlackJackGame.restart();
                 
             }
             
@@ -125,6 +133,7 @@ System.out.println("");
         System.out.println("Dealers's Shoe:");
         System.out.printf("%s of %s\n", Hand.getdHand()[0].getValue(), Hand.getdHand()[0].getSuit());
         System.out.println("Second Card Hidden");
+        System.out.println("");
        count1++; 
        count1++;
     }
@@ -138,6 +147,21 @@ System.out.println("");
     public static void setPlayerHand(){
          Hand.setpHand(deck,dcount);
          dcount++;
+    }
+    
+    public static void restart(){
+        Hand.restart();
+        dcount=0;
+        count1=0;
+        System.out.println("");
+        System.out.println("**********");
+        System.out.println("*New Hand*");
+         System.out.println("**********");
+        init();
+     
+       
+        game();
+        
     }
 
 }
